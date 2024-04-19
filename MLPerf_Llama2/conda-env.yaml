@@ -1,0 +1,48 @@
+name: deepspeed
+channels:
+  - pytorch
+  - nvidia/label/cuda-11.8.0
+  - conda-forge
+  - defaults
+dependencies:
+  - certifi=2024.2.2
+  - cudatoolkit=11.8.0
+  # - cuda-11.8.0
+  - decorator=5.1.1
+  - deepspeed=0.13.1
+  - mpi4py=3.1.5
+  - notebook=6.5.4
+  - numpy=1.26.4
+  - packaging=23.2
+  - prometheus_client=0.14.1
+  - py-cpuinfo=9.0.0
+  - python=3.10.13
+  - pytorch=2.1.2
+  - pytorch-cuda=11.8
+  - datasets=2.17.1
+  - protobuf=4.25.3
+  - tokenizers=0.15.2
+  - transformers=4.38.1
+  - accelerate=0.29.2
+  - peft=0.8.2
+  - pip=24.0
+  - ninja
+  - pyyaml
+  - torchaudio
+  - torchvision
+  - jpeg
+  - matplotlib
+  - tqdm
+  - yaml
+  - regex
+  - safetensors
+  - sentencepiece
+  - tensorboard
+  - tensorboardx
+  - pip:
+    - packaging
+    - huggingface-hub==0.20.3
+    - flash-attn==2.5.7
+prefix: /nfs_container/programs/miniconda3/envs/deepspeed
+# NOTE: if flash-attn pip install fails, please try:
+# `FLASH_ATTENTION_SKIP_CUDA_BUILD=TRUE pip install flash-attn==2.5.7 --no-build-isolation`

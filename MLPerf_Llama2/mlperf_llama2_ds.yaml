@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mlperf-llama2
+  labels:
+    app: mlperf-llama2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mlperf-llama2
+  template:
+    metadata:
+      labels:
+        app: mlperf-llama2
+    spec:
+      containers:
+      - name: container
+        image: jvpoidaq/ubuntu-ssh:latest
+        command: ["sh", "-c", "service ssh start && sleep infinity"]
+        volumeMounts:
+          - mountPath: /dev/shm
+            name: cache-volume
+          - mountPath: "/nfs_container"
+            name: nfs-pv
+        resources:
+          requests:
+            memory: "16Gi"
+            cpu: "4"
+            nvidia.com/gpu: 1 # requesting 1 GPU
+          limits:
+            nvidia.com/gpu: 1 # requesting 1 GPU
+      volumes:
+        - emptyDir:
+            medium: Memory
+            sizeLimit: 8Gi
+          name: cache-volume
+        - name: nfs-pv
+          persistentVolumeClaim:
+            claimName: nfs-pv-claim
