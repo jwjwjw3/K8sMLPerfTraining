@@ -1,6 +1,6 @@
 accelerate launch --config_file configs/default_config.yaml scripts/train.py \
---dataset_path "/nfs_container/greenk8s_1/workloads/MLPerf_Llama2/lora_finetune_dataset" \
---model_path "/nfs_container/greenk8s_1/workloads/MLPerf_Llama2/llama2-7b" \
+--dataset_path "/path/to/MLPerf_Llama2/lora_finetune_dataset" \
+--model_path "/path/to/MLPerf_Llama2/llama2-7b" \
 --max_seq_len 8192 \
 --bf16 True \
 --logging_steps 24 \
