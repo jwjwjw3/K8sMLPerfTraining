@@ -1,0 +1,21 @@
+name: rgat
+channels:
+  - defaults
+  - pytorch
+  - nvidia
+  - pyg
+dependencies:
+  - python=3.9
+  - scikit-learn=0.24.2
+  - pytorch=1.13.0
+  - torchvision=0.14.0
+  - torchaudio=0.13.0
+  - pytorch-cuda=11.7
+  - pytorch-scatter=2.1.1
+  - pytorch-sparse=0.6.17
+  - pyg=2.4.0
+  - pip
+  - pip:
+    - graphlearn-torch==0.2.2
+
+prefix: /nfs_container/programs/miniconda3/envs/rgat

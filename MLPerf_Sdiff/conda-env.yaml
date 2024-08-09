@@ -1,0 +1,43 @@
+name: sdiff
+channels:
+  - pytorch
+  - nvidia/label/cuda-11.8.0
+  - conda-forge
+  - defaults
+dependencies:
+  - pytorch=2.2.0
+  - torchvision=0.17.0
+  - pytorch-cuda=11.8
+  - python=3.9
+  - pip=24.0
+  - numpy=1.26.4
+  - pip:
+    - httpx==0.24.1
+    - albumentations==1.3.0
+    - pudb==2019.2
+    - imageio==2.9.0
+    - imageio-ffmpeg==0.4.2
+    - torchmetrics==0.11.4
+    - omegaconf==2.1.1
+    - streamlit>=0.73.1
+    - einops==0.3.0
+    - transformers==4.19.2
+    - webdataset==0.2.86
+    - open-clip-torch==2.7.0
+    - datasets==2.10.1
+    - diffusers==0.14.0
+    - cloudpathlib==0.13.0
+    - opencv-python-headless==4.9.0.80
+    - prefetch_generator==1.0.3
+    - invisible-watermark==0.1.5
+    - gradio==3.11
+    - colossalai==0.2.7
+    # - xformers==0.0.25
+    - bitsandbytes==0.37.2
+    - lightning==1.9
+    - titans==0.0.7
+    - test-tube>=0.7.5
+prefix: /nfs_container/programs/miniconda3/envs/sdiff
+
+# You may need the following commands to let torchvision work:
+# sudo apt install ffmpeg libsm6 libxext6  -y

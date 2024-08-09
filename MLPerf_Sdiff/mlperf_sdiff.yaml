@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mlperf-llama2
+  name: mlperf-sdiff
   labels:
-    app: mlperf-llama2
+    app: mlperf-sdiff
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
-      app: mlperf-llama2
+      app: mlperf-sdiff
   template:
     metadata:
       labels:
-        app: mlperf-llama2
+        app: mlperf-sdiff
     spec:
       containers:
       - name: container

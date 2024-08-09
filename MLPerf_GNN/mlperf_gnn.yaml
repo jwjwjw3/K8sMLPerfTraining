@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mlperf-llama2
+  name: mlperf-gnn
   labels:
-    app: mlperf-llama2
+    app: mlperf-gnn
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
-      app: mlperf-llama2
+      app: mlperf-gnn
   template:
     metadata:
       labels:
-        app: mlperf-llama2
+        app: mlperf-gnn
     spec:
       containers:
       - name: container

@@ -60,7 +60,7 @@ class ScriptArguments:
         metadata={"help": "path to model config"},
     )
     num_train_epochs: Optional[int] = field(
-        default=1,
+        default=100,
         metadata={"help": "The number of training epochs for the reward model."},
     )
     fp16: Optional[bool] = field(
@@ -105,7 +105,7 @@ class ScriptArguments:
         default="results", metadata={"help": "Where to store the final model."}
     )
     use_flash_attn: Optional[bool] = field(
-        default=False,
+        default=True,
         metadata={"help": "Enables Flash attention for training."},
     )
     use_peft_lora: Optional[bool] = field(
